@@ -1,0 +1,761 @@
+{'affine_hids': [256, 256],
+ 'batch_size': 256,
+ 'class_weights': [1],
+ 'clip_gradient': 1,
+ 'coupling_hids': [256, 256],
+ 'dataset': 'cube',
+ 'decay_rate': 0.5,
+ 'decay_steps': 10000,
+ 'dfile': './data/cube_20_0.3.pkl',
+ 'dimension': 20,
+ 'epochs': 500,
+ 'exp_dir': './exp/gas/vec',
+ 'gfile': None,
+ 'gpu': '0',
+ 'lambda_mse': 0.0,
+ 'lambda_nll': 1.0,
+ 'lambda_xent': 1.0,
+ 'layer_cfg': ['ML', 'LR', 'CP2'],
+ 'linear_hids': [256, 256],
+ 'linear_rank': -1,
+ 'lr': 0.001,
+ 'model': 'acflow_classifier',
+ 'n_classes': 8,
+ 'n_components': 40,
+ 'num_samples': 10,
+ 'optimizer': 'adam',
+ 'prior': 'autoreg',
+ 'prior_hids': [256, 256],
+ 'prior_layers': 2,
+ 'prior_units': 256,
+ 'rnncp_layers': 2,
+ 'rnncp_units': 256,
+ 'seed': 123,
+ 'summ_freq': 100,
+ 'transform': ['AF', 'TL', 'TL', 'TL', 'TL', 'AF']}
+From scripts/train.py:34: The name tf.set_random_seed is deprecated. Please use tf.compat.v1.set_random_seed instead.
+
+From scripts/train.py:36: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+From scripts/train.py:40: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+From F:\annoconda\envs\tf1.15\lib\site-packages\tensorflow_core\python\data\util\random_seed.py:58: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+From C:\Users\wanyong\Desktop\Archive\datasets\cube.py:36: py_func (from tensorflow.python.ops.script_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+tf.py_func is deprecated in TF V2. Instead, there are two
+    options available in V2.
+    - tf.py_function takes a python function which manipulates tf eager
+    tensors instead of numpy arrays. It's easy to convert a tf eager tensor to
+    an ndarray (just call tensor.numpy()) but having access to eager tensors
+    means `tf.py_function`s can use accelerators such as GPUs as well as
+    being differentiable using a gradient tape.
+    - tf.numpy_function maintains the semantics of the deprecated tf.py_func
+    (it is not differentiable, and manipulates numpy arrays). It drops the
+    stateful argument making all functions stateful.
+    
+From C:\Users\wanyong\Desktop\Archive\datasets\cube.py:41: DatasetV1.make_initializable_iterator (from tensorflow.python.data.ops.dataset_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `for ... in dataset:` to iterate over a dataset. If using `tf.estimator`, return the `Dataset` object directly from your input function. As a last resort, you can use `tf.compat.v1.data.make_initializable_iterator(dataset)`.
+('trainset: 10000', 'validset: 5000', 'testset: 5000')
+From C:\Users\wanyong\Desktop\Archive\models\ACTAN\transforms.py:39: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+
+From C:\Users\wanyong\Desktop\Archive\models\ACTAN\transforms.py:39: The name tf.AUTO_REUSE is deprecated. Please use tf.compat.v1.AUTO_REUSE instead.
+
+From C:\Users\wanyong\Desktop\Archive\models\ACTAN\transforms.py:505: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+
+From C:\Users\wanyong\Desktop\Archive\models\acflow_classifier.py:76: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+From F:\annoconda\envs\tf1.15\lib\site-packages\tensorflow_core\python\util\dispatch.py:180: batch_gather (from tensorflow.python.ops.array_ops) is deprecated and will be removed after 2017-10-25.
+Instructions for updating:
+`tf.batch_gather` is deprecated, please use `tf.gather` with `batch_dims=-1` instead.
+From F:\annoconda\envs\tf1.15\lib\site-packages\tensorflow_core\python\ops\resource_variable_ops.py:1630: calling BaseResourceVariable.__init__ (from tensorflow.python.ops.resource_variable_ops) with constraint is deprecated and will be removed in a future version.
+Instructions for updating:
+If using Keras pass *_constraint arguments to layers.
+From C:\Users\wanyong\Desktop\Archive\models\ACTAN\transforms.py:592: The name tf.matrix_diag is deprecated. Please use tf.linalg.diag instead.
+
+From C:\Users\wanyong\Desktop\Archive\models\ACTAN\transforms.py:541: The name tf.matrix_band_part is deprecated. Please use tf.linalg.band_part instead.
+
+From C:\Users\wanyong\Desktop\Archive\models\ACTAN\transforms.py:554: The name tf.log is deprecated. Please use tf.math.log instead.
+
+From C:\Users\wanyong\Desktop\Archive\models\ACTAN\transforms.py:554: The name tf.matrix_diag_part is deprecated. Please use tf.linalg.diag_part instead.
+
+From C:\Users\wanyong\Desktop\Archive\models\ACTAN\transforms.py:269: The name tf.mod is deprecated. Please use tf.math.mod instead.
+
+From C:\Users\wanyong\Desktop\Archive\models\acflow_classifier.py:49: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+From C:\Users\wanyong\Desktop\Archive\models\ACTAN\likelihood.py:243: multinomial (from tensorflow.python.ops.random_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.random.categorical` instead.
+From C:\Users\wanyong\Desktop\Archive\models\ACTAN\likelihood.py:247: The name tf.random_normal is deprecated. Please use tf.random.normal instead.
+
+From C:\Users\wanyong\Desktop\Archive\models\ACTAN\transforms.py:566: The name tf.matrix_triangular_solve is deprecated. Please use tf.linalg.triangular_solve instead.
+
+From C:\Users\wanyong\Desktop\Archive\models\acflow_classifier.py:119: The name tf.summary.scalar is deprecated. Please use tf.compat.v1.summary.scalar instead.
+
+From C:\Users\wanyong\Desktop\Archive\models\acflow_classifier.py:141: The name tf.train.get_or_create_global_step is deprecated. Please use tf.compat.v1.train.get_or_create_global_step instead.
+
+From C:\Users\wanyong\Desktop\Archive\models\acflow_classifier.py:142: The name tf.train.inverse_time_decay is deprecated. Please use tf.compat.v1.train.inverse_time_decay instead.
+
+From C:\Users\wanyong\Desktop\Archive\models\acflow_classifier.py:148: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+From C:\Users\wanyong\Desktop\Archive\models\acflow_classifier.py:157: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+
+From C:\Users\wanyong\Desktop\Archive\models\acflow_classifier.py:161: The name tf.check_numerics is deprecated. Please use tf.debugging.check_numerics instead.
+
+From C:\Users\wanyong\Desktop\Archive\models\acflow_classifier.py:168: The name tf.summary.merge_all is deprecated. Please use tf.compat.v1.summary.merge_all instead.
+
+From scripts/train.py:55: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
+
+From scripts/train.py:57: The name tf.train.Saver is deprecated. Please use tf.compat.v1.train.Saver instead.
+
+From scripts/train.py:57: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+
+From scripts/train.py:58: The name tf.summary.FileWriter is deprecated. Please use tf.compat.v1.summary.FileWriter instead.
+
+====================
+Variables:
+[<tf.Variable 'trans/layer_1/linear_0/W:0' shape=(20, 20) dtype=float32_ref>,
+ <tf.Variable 'trans/layer_1/linear_0/b:0' shape=(20,) dtype=float32_ref>,
+ <tf.Variable 'trans/layer_1/lrelu_1/log_alpha:0' shape=() dtype=float32_ref>,
+ <tf.Variable 'trans/layer_2/linear_0/W:0' shape=(20, 20) dtype=float32_ref>,
+ <tf.Variable 'trans/layer_2/linear_0/b:0' shape=(20,) dtype=float32_ref>,
+ <tf.Variable 'trans/layer_2/lrelu_1/log_alpha:0' shape=() dtype=float32_ref>,
+ <tf.Variable 'trans/layer_3/linear_0/W:0' shape=(20, 20) dtype=float32_ref>,
+ <tf.Variable 'trans/layer_3/linear_0/b:0' shape=(20,) dtype=float32_ref>,
+ <tf.Variable 'trans/layer_3/lrelu_1/log_alpha:0' shape=() dtype=float32_ref>,
+ <tf.Variable 'trans/layer_4/linear_0/W:0' shape=(20, 20) dtype=float32_ref>,
+ <tf.Variable 'trans/layer_4/linear_0/b:0' shape=(20,) dtype=float32_ref>,
+ <tf.Variable 'trans/layer_4/lrelu_1/log_alpha:0' shape=() dtype=float32_ref>,
+ <tf.Variable 'trans_1/affine_0/ms/l0/kernel:0' shape=(68, 256) dtype=float32>,
+ <tf.Variable 'trans_1/affine_0/ms/l0/bias:0' shape=(256,) dtype=float32>,
+ <tf.Variable 'trans_1/affine_0/ms/l1/kernel:0' shape=(256, 256) dtype=float32>,
+ <tf.Variable 'trans_1/affine_0/ms/l1/bias:0' shape=(256,) dtype=float32>,
+ <tf.Variable 'trans_1/affine_0/ms/l2/kernel:0' shape=(256, 40) dtype=float32>,
+ <tf.Variable 'trans_1/affine_0/ms/l2/bias:0' shape=(40,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_1/linear_0/wnn/l0/kernel:0' shape=(68, 256) dtype=float32>,
+ <tf.Variable 'trans_1/layer_1/linear_0/wnn/l0/bias:0' shape=(256,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_1/linear_0/wnn/l1/kernel:0' shape=(256, 256) dtype=float32>,
+ <tf.Variable 'trans_1/layer_1/linear_0/wnn/l1/bias:0' shape=(256,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_1/linear_0/wnn/l2/kernel:0' shape=(256, 800) dtype=float32>,
+ <tf.Variable 'trans_1/layer_1/linear_0/wnn/l2/bias:0' shape=(800,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_1/linear_0/bnn/l0/kernel:0' shape=(68, 256) dtype=float32>,
+ <tf.Variable 'trans_1/layer_1/linear_0/bnn/l0/bias:0' shape=(256,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_1/linear_0/bnn/l1/kernel:0' shape=(256, 256) dtype=float32>,
+ <tf.Variable 'trans_1/layer_1/linear_0/bnn/l1/bias:0' shape=(256,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_1/linear_0/bnn/l2/kernel:0' shape=(256, 20) dtype=float32>,
+ <tf.Variable 'trans_1/layer_1/linear_0/bnn/l2/bias:0' shape=(20,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_1/cp2_2/ms1/l0/kernel:0' shape=(108, 256) dtype=float32>,
+ <tf.Variable 'trans_1/layer_1/cp2_2/ms1/l0/bias:0' shape=(256,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_1/cp2_2/ms1/l1/kernel:0' shape=(256, 256) dtype=float32>,
+ <tf.Variable 'trans_1/layer_1/cp2_2/ms1/l1/bias:0' shape=(256,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_1/cp2_2/ms1/l2/kernel:0' shape=(256, 40) dtype=float32>,
+ <tf.Variable 'trans_1/layer_1/cp2_2/ms1/l2/bias:0' shape=(40,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_1/cp2_2/ms2/l0/kernel:0' shape=(108, 256) dtype=float32>,
+ <tf.Variable 'trans_1/layer_1/cp2_2/ms2/l0/bias:0' shape=(256,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_1/cp2_2/ms2/l1/kernel:0' shape=(256, 256) dtype=float32>,
+ <tf.Variable 'trans_1/layer_1/cp2_2/ms2/l1/bias:0' shape=(256,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_1/cp2_2/ms2/l2/kernel:0' shape=(256, 40) dtype=float32>,
+ <tf.Variable 'trans_1/layer_1/cp2_2/ms2/l2/bias:0' shape=(40,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_2/linear_0/wnn/l0/kernel:0' shape=(68, 256) dtype=float32>,
+ <tf.Variable 'trans_1/layer_2/linear_0/wnn/l0/bias:0' shape=(256,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_2/linear_0/wnn/l1/kernel:0' shape=(256, 256) dtype=float32>,
+ <tf.Variable 'trans_1/layer_2/linear_0/wnn/l1/bias:0' shape=(256,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_2/linear_0/wnn/l2/kernel:0' shape=(256, 800) dtype=float32>,
+ <tf.Variable 'trans_1/layer_2/linear_0/wnn/l2/bias:0' shape=(800,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_2/linear_0/bnn/l0/kernel:0' shape=(68, 256) dtype=float32>,
+ <tf.Variable 'trans_1/layer_2/linear_0/bnn/l0/bias:0' shape=(256,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_2/linear_0/bnn/l1/kernel:0' shape=(256, 256) dtype=float32>,
+ <tf.Variable 'trans_1/layer_2/linear_0/bnn/l1/bias:0' shape=(256,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_2/linear_0/bnn/l2/kernel:0' shape=(256, 20) dtype=float32>,
+ <tf.Variable 'trans_1/layer_2/linear_0/bnn/l2/bias:0' shape=(20,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_2/cp2_2/ms1/l0/kernel:0' shape=(108, 256) dtype=float32>,
+ <tf.Variable 'trans_1/layer_2/cp2_2/ms1/l0/bias:0' shape=(256,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_2/cp2_2/ms1/l1/kernel:0' shape=(256, 256) dtype=float32>,
+ <tf.Variable 'trans_1/layer_2/cp2_2/ms1/l1/bias:0' shape=(256,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_2/cp2_2/ms1/l2/kernel:0' shape=(256, 40) dtype=float32>,
+ <tf.Variable 'trans_1/layer_2/cp2_2/ms1/l2/bias:0' shape=(40,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_2/cp2_2/ms2/l0/kernel:0' shape=(108, 256) dtype=float32>,
+ <tf.Variable 'trans_1/layer_2/cp2_2/ms2/l0/bias:0' shape=(256,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_2/cp2_2/ms2/l1/kernel:0' shape=(256, 256) dtype=float32>,
+ <tf.Variable 'trans_1/layer_2/cp2_2/ms2/l1/bias:0' shape=(256,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_2/cp2_2/ms2/l2/kernel:0' shape=(256, 40) dtype=float32>,
+ <tf.Variable 'trans_1/layer_2/cp2_2/ms2/l2/bias:0' shape=(40,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_3/linear_0/wnn/l0/kernel:0' shape=(68, 256) dtype=float32>,
+ <tf.Variable 'trans_1/layer_3/linear_0/wnn/l0/bias:0' shape=(256,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_3/linear_0/wnn/l1/kernel:0' shape=(256, 256) dtype=float32>,
+ <tf.Variable 'trans_1/layer_3/linear_0/wnn/l1/bias:0' shape=(256,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_3/linear_0/wnn/l2/kernel:0' shape=(256, 800) dtype=float32>,
+ <tf.Variable 'trans_1/layer_3/linear_0/wnn/l2/bias:0' shape=(800,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_3/linear_0/bnn/l0/kernel:0' shape=(68, 256) dtype=float32>,
+ <tf.Variable 'trans_1/layer_3/linear_0/bnn/l0/bias:0' shape=(256,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_3/linear_0/bnn/l1/kernel:0' shape=(256, 256) dtype=float32>,
+ <tf.Variable 'trans_1/layer_3/linear_0/bnn/l1/bias:0' shape=(256,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_3/linear_0/bnn/l2/kernel:0' shape=(256, 20) dtype=float32>,
+ <tf.Variable 'trans_1/layer_3/linear_0/bnn/l2/bias:0' shape=(20,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_3/cp2_2/ms1/l0/kernel:0' shape=(108, 256) dtype=float32>,
+ <tf.Variable 'trans_1/layer_3/cp2_2/ms1/l0/bias:0' shape=(256,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_3/cp2_2/ms1/l1/kernel:0' shape=(256, 256) dtype=float32>,
+ <tf.Variable 'trans_1/layer_3/cp2_2/ms1/l1/bias:0' shape=(256,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_3/cp2_2/ms1/l2/kernel:0' shape=(256, 40) dtype=float32>,
+ <tf.Variable 'trans_1/layer_3/cp2_2/ms1/l2/bias:0' shape=(40,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_3/cp2_2/ms2/l0/kernel:0' shape=(108, 256) dtype=float32>,
+ <tf.Variable 'trans_1/layer_3/cp2_2/ms2/l0/bias:0' shape=(256,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_3/cp2_2/ms2/l1/kernel:0' shape=(256, 256) dtype=float32>,
+ <tf.Variable 'trans_1/layer_3/cp2_2/ms2/l1/bias:0' shape=(256,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_3/cp2_2/ms2/l2/kernel:0' shape=(256, 40) dtype=float32>,
+ <tf.Variable 'trans_1/layer_3/cp2_2/ms2/l2/bias:0' shape=(40,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_4/linear_0/wnn/l0/kernel:0' shape=(68, 256) dtype=float32>,
+ <tf.Variable 'trans_1/layer_4/linear_0/wnn/l0/bias:0' shape=(256,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_4/linear_0/wnn/l1/kernel:0' shape=(256, 256) dtype=float32>,
+ <tf.Variable 'trans_1/layer_4/linear_0/wnn/l1/bias:0' shape=(256,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_4/linear_0/wnn/l2/kernel:0' shape=(256, 800) dtype=float32>,
+ <tf.Variable 'trans_1/layer_4/linear_0/wnn/l2/bias:0' shape=(800,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_4/linear_0/bnn/l0/kernel:0' shape=(68, 256) dtype=float32>,
+ <tf.Variable 'trans_1/layer_4/linear_0/bnn/l0/bias:0' shape=(256,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_4/linear_0/bnn/l1/kernel:0' shape=(256, 256) dtype=float32>,
+ <tf.Variable 'trans_1/layer_4/linear_0/bnn/l1/bias:0' shape=(256,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_4/linear_0/bnn/l2/kernel:0' shape=(256, 20) dtype=float32>,
+ <tf.Variable 'trans_1/layer_4/linear_0/bnn/l2/bias:0' shape=(20,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_4/cp2_2/ms1/l0/kernel:0' shape=(108, 256) dtype=float32>,
+ <tf.Variable 'trans_1/layer_4/cp2_2/ms1/l0/bias:0' shape=(256,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_4/cp2_2/ms1/l1/kernel:0' shape=(256, 256) dtype=float32>,
+ <tf.Variable 'trans_1/layer_4/cp2_2/ms1/l1/bias:0' shape=(256,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_4/cp2_2/ms1/l2/kernel:0' shape=(256, 40) dtype=float32>,
+ <tf.Variable 'trans_1/layer_4/cp2_2/ms1/l2/bias:0' shape=(40,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_4/cp2_2/ms2/l0/kernel:0' shape=(108, 256) dtype=float32>,
+ <tf.Variable 'trans_1/layer_4/cp2_2/ms2/l0/bias:0' shape=(256,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_4/cp2_2/ms2/l1/kernel:0' shape=(256, 256) dtype=float32>,
+ <tf.Variable 'trans_1/layer_4/cp2_2/ms2/l1/bias:0' shape=(256,) dtype=float32>,
+ <tf.Variable 'trans_1/layer_4/cp2_2/ms2/l2/kernel:0' shape=(256, 40) dtype=float32>,
+ <tf.Variable 'trans_1/layer_4/cp2_2/ms2/l2/bias:0' shape=(40,) dtype=float32>,
+ <tf.Variable 'trans_1/affine_5/ms/l0/kernel:0' shape=(68, 256) dtype=float32>,
+ <tf.Variable 'trans_1/affine_5/ms/l0/bias:0' shape=(256,) dtype=float32>,
+ <tf.Variable 'trans_1/affine_5/ms/l1/kernel:0' shape=(256, 256) dtype=float32>,
+ <tf.Variable 'trans_1/affine_5/ms/l1/bias:0' shape=(256,) dtype=float32>,
+ <tf.Variable 'trans_1/affine_5/ms/l2/kernel:0' shape=(256, 40) dtype=float32>,
+ <tf.Variable 'trans_1/affine_5/ms/l2/bias:0' shape=(40,) dtype=float32>,
+ <tf.Variable 'prior_1/rnn_cell/kernel:0' shape=(69, 768) dtype=float32>,
+ <tf.Variable 'prior_1/rnn_cell/recurrent_kernel:0' shape=(256, 768) dtype=float32>,
+ <tf.Variable 'prior_1/rnn_cell/bias:0' shape=(768,) dtype=float32>,
+ <tf.Variable 'prior_1/rnn_cell/kernel_1:0' shape=(256, 768) dtype=float32>,
+ <tf.Variable 'prior_1/rnn_cell/recurrent_kernel_1:0' shape=(256, 768) dtype=float32>,
+ <tf.Variable 'prior_1/rnn_cell/bias_1:0' shape=(768,) dtype=float32>,
+ <tf.Variable 'prior_1/rnn_out/l0/kernel:0' shape=(324, 256) dtype=float32>,
+ <tf.Variable 'prior_1/rnn_out/l0/bias:0' shape=(256,) dtype=float32>,
+ <tf.Variable 'prior_1/rnn_out/l1/kernel:0' shape=(256, 256) dtype=float32>,
+ <tf.Variable 'prior_1/rnn_out/l1/bias:0' shape=(256,) dtype=float32>,
+ <tf.Variable 'prior_1/rnn_out/l2/kernel:0' shape=(256, 120) dtype=float32>,
+ <tf.Variable 'prior_1/rnn_out/l2/bias:0' shape=(120,) dtype=float32>]
+TOTAL TENSORS: 132 TOTAL PARAMS: 3.355756[M]
+====================
+starting training
+Epoch 0, train: 0.4938/0.4938, valid: 0.5344/0.5344 test: 0.5232/0.5232
+Epoch 1, train: 0.5523/0.5523, valid: 0.5436/0.5436 test: 0.5492/0.5492
+Epoch 2, train: 0.5533/0.5533, valid: 0.5556/0.5556 test: 0.5588/0.5588
+Epoch 3, train: 0.5636/0.5636, valid: 0.5512/0.5556 test: 0.5552/0.5588
+Epoch 4, train: 0.5631/0.5636, valid: 0.5608/0.5608 test: 0.5530/0.5588
+Epoch 5, train: 0.5636/0.5636, valid: 0.5648/0.5648 test: 0.5690/0.5690
+Epoch 6, train: 0.5744/0.5744, valid: 0.5624/0.5648 test: 0.5642/0.5690
+Epoch 7, train: 0.5694/0.5744, valid: 0.5770/0.5770 test: 0.5796/0.5796
+Epoch 8, train: 0.5700/0.5744, valid: 0.5732/0.5770 test: 0.5644/0.5796
+Epoch 9, train: 0.5696/0.5744, valid: 0.5652/0.5770 test: 0.5734/0.5796
+Epoch 10, train: 0.5735/0.5744, valid: 0.5756/0.5770 test: 0.5774/0.5796
+Epoch 11, train: 0.5665/0.5744, valid: 0.5626/0.5770 test: 0.5620/0.5796
+Epoch 12, train: 0.5769/0.5769, valid: 0.5748/0.5770 test: 0.5714/0.5796
+Epoch 13, train: 0.5766/0.5769, valid: 0.5658/0.5770 test: 0.5876/0.5876
+Epoch 14, train: 0.5743/0.5769, valid: 0.5614/0.5770 test: 0.5836/0.5876
+Epoch 15, train: 0.5838/0.5838, valid: 0.5728/0.5770 test: 0.5986/0.5986
+Epoch 16, train: 0.5792/0.5838, valid: 0.5880/0.5880 test: 0.5838/0.5986
+Epoch 17, train: 0.5756/0.5838, valid: 0.5734/0.5880 test: 0.5756/0.5986
+Epoch 18, train: 0.5750/0.5838, valid: 0.5798/0.5880 test: 0.5794/0.5986
+Epoch 19, train: 0.5809/0.5838, valid: 0.5728/0.5880 test: 0.5676/0.5986
+Epoch 20, train: 0.5827/0.5838, valid: 0.5868/0.5880 test: 0.5856/0.5986
+Epoch 21, train: 0.5799/0.5838, valid: 0.5824/0.5880 test: 0.5702/0.5986
+Epoch 22, train: 0.5798/0.5838, valid: 0.5780/0.5880 test: 0.5850/0.5986
+Epoch 23, train: 0.5797/0.5838, valid: 0.5770/0.5880 test: 0.5764/0.5986
+Epoch 24, train: 0.5825/0.5838, valid: 0.5884/0.5884 test: 0.5792/0.5986
+Epoch 25, train: 0.5764/0.5838, valid: 0.5816/0.5884 test: 0.5880/0.5986
+Epoch 26, train: 0.5934/0.5934, valid: 0.5756/0.5884 test: 0.5906/0.5986
+Epoch 27, train: 0.5870/0.5934, valid: 0.5788/0.5884 test: 0.5744/0.5986
+Epoch 28, train: 0.5836/0.5934, valid: 0.5854/0.5884 test: 0.5770/0.5986
+Epoch 29, train: 0.5818/0.5934, valid: 0.5878/0.5884 test: 0.5850/0.5986
+Epoch 30, train: 0.5789/0.5934, valid: 0.5756/0.5884 test: 0.5754/0.5986
+Epoch 31, train: 0.5879/0.5934, valid: 0.5686/0.5884 test: 0.5824/0.5986
+Epoch 32, train: 0.5873/0.5934, valid: 0.5850/0.5884 test: 0.5782/0.5986
+Epoch 33, train: 0.5858/0.5934, valid: 0.5684/0.5884 test: 0.5792/0.5986
+Epoch 34, train: 0.5913/0.5934, valid: 0.5726/0.5884 test: 0.5838/0.5986
+Epoch 35, train: 0.5833/0.5934, valid: 0.5682/0.5884 test: 0.5886/0.5986
+Epoch 36, train: 0.5797/0.5934, valid: 0.5756/0.5884 test: 0.5864/0.5986
+Epoch 37, train: 0.5752/0.5934, valid: 0.5776/0.5884 test: 0.5886/0.5986
+Epoch 38, train: 0.5801/0.5934, valid: 0.5784/0.5884 test: 0.5760/0.5986
+Epoch 39, train: 0.5903/0.5934, valid: 0.5812/0.5884 test: 0.5820/0.5986
+Epoch 40, train: 0.5926/0.5934, valid: 0.5690/0.5884 test: 0.5700/0.5986
+Epoch 41, train: 0.5787/0.5934, valid: 0.5678/0.5884 test: 0.5812/0.5986
+Epoch 42, train: 0.5916/0.5934, valid: 0.5828/0.5884 test: 0.5804/0.5986
+Epoch 43, train: 0.5827/0.5934, valid: 0.5900/0.5900 test: 0.5882/0.5986
+Epoch 44, train: 0.5877/0.5934, valid: 0.5712/0.5900 test: 0.5732/0.5986
+Epoch 45, train: 0.5883/0.5934, valid: 0.5762/0.5900 test: 0.5724/0.5986
+Epoch 46, train: 0.5821/0.5934, valid: 0.5804/0.5900 test: 0.5820/0.5986
+Epoch 47, train: 0.5896/0.5934, valid: 0.5826/0.5900 test: 0.5968/0.5986
+Epoch 48, train: 0.5808/0.5934, valid: 0.5844/0.5900 test: 0.5802/0.5986
+Epoch 49, train: 0.5780/0.5934, valid: 0.5770/0.5900 test: 0.5784/0.5986
+Epoch 50, train: 0.5837/0.5934, valid: 0.5772/0.5900 test: 0.5668/0.5986
+Epoch 51, train: 0.5935/0.5935, valid: 0.5922/0.5922 test: 0.5770/0.5986
+Epoch 52, train: 0.5882/0.5935, valid: 0.5806/0.5922 test: 0.5946/0.5986
+Epoch 53, train: 0.5900/0.5935, valid: 0.5746/0.5922 test: 0.5864/0.5986
+Epoch 54, train: 0.5872/0.5935, valid: 0.5936/0.5936 test: 0.5878/0.5986
+Epoch 55, train: 0.5799/0.5935, valid: 0.5822/0.5936 test: 0.5834/0.5986
+Epoch 56, train: 0.5927/0.5935, valid: 0.5894/0.5936 test: 0.5968/0.5986
+Epoch 57, train: 0.5895/0.5935, valid: 0.5786/0.5936 test: 0.5870/0.5986
+Epoch 58, train: 0.5926/0.5935, valid: 0.5888/0.5936 test: 0.5838/0.5986
+Epoch 59, train: 0.5909/0.5935, valid: 0.5812/0.5936 test: 0.5732/0.5986
+Epoch 60, train: 0.5926/0.5935, valid: 0.5708/0.5936 test: 0.5842/0.5986
+Epoch 61, train: 0.5841/0.5935, valid: 0.5848/0.5936 test: 0.5868/0.5986
+Epoch 62, train: 0.5903/0.5935, valid: 0.5868/0.5936 test: 0.5850/0.5986
+Epoch 63, train: 0.5837/0.5935, valid: 0.5886/0.5936 test: 0.5886/0.5986
+Epoch 64, train: 0.5939/0.5939, valid: 0.5862/0.5936 test: 0.5928/0.5986
+Epoch 65, train: 0.5908/0.5939, valid: 0.6012/0.6012 test: 0.5864/0.5986
+Epoch 66, train: 0.5923/0.5939, valid: 0.5874/0.6012 test: 0.5942/0.5986
+Epoch 67, train: 0.5973/0.5973, valid: 0.5830/0.6012 test: 0.5832/0.5986
+Epoch 68, train: 0.5832/0.5973, valid: 0.5840/0.6012 test: 0.5868/0.5986
+Epoch 69, train: 0.5909/0.5973, valid: 0.5846/0.6012 test: 0.5900/0.5986
+Epoch 70, train: 0.5822/0.5973, valid: 0.5788/0.6012 test: 0.5776/0.5986
+Epoch 71, train: 0.5897/0.5973, valid: 0.5814/0.6012 test: 0.5880/0.5986
+Epoch 72, train: 0.5866/0.5973, valid: 0.5872/0.6012 test: 0.5884/0.5986
+Epoch 73, train: 0.5862/0.5973, valid: 0.5786/0.6012 test: 0.5928/0.5986
+Epoch 74, train: 0.5842/0.5973, valid: 0.5924/0.6012 test: 0.5904/0.5986
+Epoch 75, train: 0.5917/0.5973, valid: 0.5794/0.6012 test: 0.5912/0.5986
+Epoch 76, train: 0.5825/0.5973, valid: 0.5862/0.6012 test: 0.5862/0.5986
+Epoch 77, train: 0.5858/0.5973, valid: 0.5778/0.6012 test: 0.5826/0.5986
+Epoch 78, train: 0.5854/0.5973, valid: 0.5850/0.6012 test: 0.5884/0.5986
+Epoch 79, train: 0.5874/0.5973, valid: 0.5822/0.6012 test: 0.5830/0.5986
+Epoch 80, train: 0.5924/0.5973, valid: 0.5788/0.6012 test: 0.5968/0.5986
+Epoch 81, train: 0.5937/0.5973, valid: 0.5730/0.6012 test: 0.5838/0.5986
+Epoch 82, train: 0.5948/0.5973, valid: 0.5882/0.6012 test: 0.5858/0.5986
+Epoch 83, train: 0.5892/0.5973, valid: 0.5834/0.6012 test: 0.5830/0.5986
+Epoch 84, train: 0.5830/0.5973, valid: 0.5792/0.6012 test: 0.5934/0.5986
+Epoch 85, train: 0.5842/0.5973, valid: 0.5860/0.6012 test: 0.5806/0.5986
+Epoch 86, train: 0.5903/0.5973, valid: 0.5858/0.6012 test: 0.5872/0.5986
+Epoch 87, train: 0.5854/0.5973, valid: 0.5832/0.6012 test: 0.5886/0.5986
+Epoch 88, train: 0.5909/0.5973, valid: 0.5940/0.6012 test: 0.5826/0.5986
+Epoch 89, train: 0.5931/0.5973, valid: 0.5906/0.6012 test: 0.5800/0.5986
+Epoch 90, train: 0.5859/0.5973, valid: 0.5882/0.6012 test: 0.5836/0.5986
+Epoch 91, train: 0.5930/0.5973, valid: 0.5826/0.6012 test: 0.5722/0.5986
+Epoch 92, train: 0.5905/0.5973, valid: 0.5794/0.6012 test: 0.5888/0.5986
+Epoch 93, train: 0.5953/0.5973, valid: 0.5804/0.6012 test: 0.5836/0.5986
+Epoch 94, train: 0.5898/0.5973, valid: 0.5998/0.6012 test: 0.5878/0.5986
+Epoch 95, train: 0.5842/0.5973, valid: 0.5818/0.6012 test: 0.5938/0.5986
+Epoch 96, train: 0.5918/0.5973, valid: 0.5844/0.6012 test: 0.5800/0.5986
+Epoch 97, train: 0.5958/0.5973, valid: 0.5860/0.6012 test: 0.5748/0.5986
+Epoch 98, train: 0.5973/0.5973, valid: 0.5888/0.6012 test: 0.5866/0.5986
+Epoch 99, train: 0.5991/0.5991, valid: 0.5732/0.6012 test: 0.6012/0.6012
+Epoch 100, train: 0.5973/0.5991, valid: 0.5864/0.6012 test: 0.5982/0.6012
+Epoch 101, train: 0.5881/0.5991, valid: 0.5814/0.6012 test: 0.5870/0.6012
+Epoch 102, train: 0.5936/0.5991, valid: 0.5760/0.6012 test: 0.5940/0.6012
+Epoch 103, train: 0.5920/0.5991, valid: 0.5822/0.6012 test: 0.5720/0.6012
+Epoch 104, train: 0.5942/0.5991, valid: 0.5906/0.6012 test: 0.5902/0.6012
+Epoch 105, train: 0.6000/0.6000, valid: 0.5720/0.6012 test: 0.5822/0.6012
+Epoch 106, train: 0.5954/0.6000, valid: 0.5898/0.6012 test: 0.5850/0.6012
+Epoch 107, train: 0.5937/0.6000, valid: 0.5820/0.6012 test: 0.5832/0.6012
+Epoch 108, train: 0.6020/0.6020, valid: 0.5868/0.6012 test: 0.5846/0.6012
+Epoch 109, train: 0.5971/0.6020, valid: 0.5856/0.6012 test: 0.5734/0.6012
+Epoch 110, train: 0.5968/0.6020, valid: 0.5790/0.6012 test: 0.5742/0.6012
+Epoch 111, train: 0.5916/0.6020, valid: 0.5774/0.6012 test: 0.5738/0.6012
+Epoch 112, train: 0.5922/0.6020, valid: 0.5790/0.6012 test: 0.5870/0.6012
+Epoch 113, train: 0.5931/0.6020, valid: 0.5746/0.6012 test: 0.5886/0.6012
+Epoch 114, train: 0.5846/0.6020, valid: 0.5874/0.6012 test: 0.5882/0.6012
+Epoch 115, train: 0.5977/0.6020, valid: 0.5844/0.6012 test: 0.5888/0.6012
+Epoch 116, train: 0.5960/0.6020, valid: 0.5828/0.6012 test: 0.5990/0.6012
+Epoch 117, train: 0.5911/0.6020, valid: 0.5920/0.6012 test: 0.5872/0.6012
+Epoch 118, train: 0.5954/0.6020, valid: 0.5852/0.6012 test: 0.5870/0.6012
+Epoch 119, train: 0.5945/0.6020, valid: 0.5876/0.6012 test: 0.6008/0.6012
+Epoch 120, train: 0.5914/0.6020, valid: 0.5884/0.6012 test: 0.5800/0.6012
+Epoch 121, train: 0.5943/0.6020, valid: 0.5942/0.6012 test: 0.6026/0.6026
+Epoch 122, train: 0.5939/0.6020, valid: 0.5786/0.6012 test: 0.5802/0.6026
+Epoch 123, train: 0.5857/0.6020, valid: 0.5730/0.6012 test: 0.5964/0.6026
+Epoch 124, train: 0.5926/0.6020, valid: 0.6058/0.6058 test: 0.5848/0.6026
+Epoch 125, train: 0.5937/0.6020, valid: 0.5956/0.6058 test: 0.6060/0.6060
+Epoch 126, train: 0.5988/0.6020, valid: 0.5874/0.6058 test: 0.5878/0.6060
+Epoch 127, train: 0.5930/0.6020, valid: 0.5728/0.6058 test: 0.5936/0.6060
+Epoch 128, train: 0.5945/0.6020, valid: 0.5910/0.6058 test: 0.5864/0.6060
+Epoch 129, train: 0.5933/0.6020, valid: 0.5874/0.6058 test: 0.5886/0.6060
+Epoch 130, train: 0.5922/0.6020, valid: 0.5730/0.6058 test: 0.5846/0.6060
+Epoch 131, train: 0.5986/0.6020, valid: 0.5864/0.6058 test: 0.5978/0.6060
+Epoch 132, train: 0.5996/0.6020, valid: 0.5916/0.6058 test: 0.5868/0.6060
+Epoch 133, train: 0.5958/0.6020, valid: 0.5794/0.6058 test: 0.5984/0.6060
+Epoch 134, train: 0.5807/0.6020, valid: 0.5994/0.6058 test: 0.5938/0.6060
+Epoch 135, train: 0.5937/0.6020, valid: 0.5970/0.6058 test: 0.5964/0.6060
+Epoch 136, train: 0.6026/0.6026, valid: 0.5952/0.6058 test: 0.5868/0.6060
+Epoch 137, train: 0.5990/0.6026, valid: 0.5830/0.6058 test: 0.5924/0.6060
+Epoch 138, train: 0.5931/0.6026, valid: 0.5872/0.6058 test: 0.6100/0.6100
+Epoch 139, train: 0.6023/0.6026, valid: 0.5890/0.6058 test: 0.5966/0.6100
+Epoch 140, train: 0.5948/0.6026, valid: 0.5900/0.6058 test: 0.5824/0.6100
+Epoch 141, train: 0.5969/0.6026, valid: 0.5764/0.6058 test: 0.5798/0.6100
+Epoch 142, train: 0.5901/0.6026, valid: 0.5830/0.6058 test: 0.5822/0.6100
+Epoch 143, train: 0.5931/0.6026, valid: 0.5860/0.6058 test: 0.5954/0.6100
+Epoch 144, train: 0.5965/0.6026, valid: 0.6020/0.6058 test: 0.6030/0.6100
+Epoch 145, train: 0.5938/0.6026, valid: 0.6006/0.6058 test: 0.5872/0.6100
+Epoch 146, train: 0.5997/0.6026, valid: 0.5818/0.6058 test: 0.5828/0.6100
+Epoch 147, train: 0.5939/0.6026, valid: 0.5940/0.6058 test: 0.5822/0.6100
+Epoch 148, train: 0.5921/0.6026, valid: 0.5838/0.6058 test: 0.5974/0.6100
+Epoch 149, train: 0.5904/0.6026, valid: 0.5796/0.6058 test: 0.5884/0.6100
+Epoch 150, train: 0.5903/0.6026, valid: 0.5790/0.6058 test: 0.5818/0.6100
+Epoch 151, train: 0.5962/0.6026, valid: 0.5806/0.6058 test: 0.5948/0.6100
+Epoch 152, train: 0.5967/0.6026, valid: 0.5846/0.6058 test: 0.5868/0.6100
+Epoch 153, train: 0.5982/0.6026, valid: 0.5846/0.6058 test: 0.5828/0.6100
+Epoch 154, train: 0.6008/0.6026, valid: 0.5880/0.6058 test: 0.5866/0.6100
+Epoch 155, train: 0.6020/0.6026, valid: 0.5726/0.6058 test: 0.5910/0.6100
+Epoch 156, train: 0.5995/0.6026, valid: 0.5828/0.6058 test: 0.5912/0.6100
+Epoch 157, train: 0.5965/0.6026, valid: 0.5932/0.6058 test: 0.5980/0.6100
+Epoch 158, train: 0.5960/0.6026, valid: 0.5910/0.6058 test: 0.5884/0.6100
+Epoch 159, train: 0.5878/0.6026, valid: 0.5854/0.6058 test: 0.5962/0.6100
+Epoch 160, train: 0.5997/0.6026, valid: 0.5858/0.6058 test: 0.5954/0.6100
+Epoch 161, train: 0.5941/0.6026, valid: 0.5724/0.6058 test: 0.5660/0.6100
+Epoch 162, train: 0.5981/0.6026, valid: 0.5832/0.6058 test: 0.5864/0.6100
+Epoch 163, train: 0.5967/0.6026, valid: 0.5862/0.6058 test: 0.5986/0.6100
+Epoch 164, train: 0.5916/0.6026, valid: 0.5826/0.6058 test: 0.5994/0.6100
+Epoch 165, train: 0.5955/0.6026, valid: 0.5812/0.6058 test: 0.6002/0.6100
+Epoch 166, train: 0.6053/0.6053, valid: 0.5914/0.6058 test: 0.5936/0.6100
+Epoch 167, train: 0.5973/0.6053, valid: 0.5952/0.6058 test: 0.5920/0.6100
+Epoch 168, train: 0.6009/0.6053, valid: 0.5796/0.6058 test: 0.6046/0.6100
+Epoch 169, train: 0.5903/0.6053, valid: 0.5892/0.6058 test: 0.6078/0.6100
+Epoch 170, train: 0.5929/0.6053, valid: 0.5908/0.6058 test: 0.5934/0.6100
+Epoch 171, train: 0.6044/0.6053, valid: 0.5904/0.6058 test: 0.5944/0.6100
+Epoch 172, train: 0.5991/0.6053, valid: 0.5934/0.6058 test: 0.5834/0.6100
+Epoch 173, train: 0.5889/0.6053, valid: 0.5876/0.6058 test: 0.5824/0.6100
+Epoch 174, train: 0.5997/0.6053, valid: 0.5902/0.6058 test: 0.5844/0.6100
+Epoch 175, train: 0.5943/0.6053, valid: 0.5826/0.6058 test: 0.5876/0.6100
+Epoch 176, train: 0.6028/0.6053, valid: 0.5824/0.6058 test: 0.5828/0.6100
+Epoch 177, train: 0.5945/0.6053, valid: 0.5840/0.6058 test: 0.5774/0.6100
+Epoch 178, train: 0.5969/0.6053, valid: 0.5828/0.6058 test: 0.6056/0.6100
+Epoch 179, train: 0.5834/0.6053, valid: 0.5814/0.6058 test: 0.6022/0.6100
+Epoch 180, train: 0.5994/0.6053, valid: 0.5804/0.6058 test: 0.5992/0.6100
+Epoch 181, train: 0.5961/0.6053, valid: 0.5902/0.6058 test: 0.6010/0.6100
+Epoch 182, train: 0.5924/0.6053, valid: 0.5820/0.6058 test: 0.5916/0.6100
+Epoch 183, train: 0.6010/0.6053, valid: 0.5826/0.6058 test: 0.5822/0.6100
+Epoch 184, train: 0.5976/0.6053, valid: 0.5876/0.6058 test: 0.5870/0.6100
+Epoch 185, train: 0.5925/0.6053, valid: 0.5998/0.6058 test: 0.5824/0.6100
+Epoch 186, train: 0.6053/0.6053, valid: 0.5882/0.6058 test: 0.5870/0.6100
+Epoch 187, train: 0.5994/0.6053, valid: 0.5988/0.6058 test: 0.5982/0.6100
+Epoch 188, train: 0.5923/0.6053, valid: 0.5778/0.6058 test: 0.5982/0.6100
+Epoch 189, train: 0.5941/0.6053, valid: 0.5918/0.6058 test: 0.5950/0.6100
+Epoch 190, train: 0.5947/0.6053, valid: 0.5928/0.6058 test: 0.5962/0.6100
+Epoch 191, train: 0.5971/0.6053, valid: 0.5836/0.6058 test: 0.5960/0.6100
+Epoch 192, train: 0.6000/0.6053, valid: 0.5876/0.6058 test: 0.5940/0.6100
+Epoch 193, train: 0.5933/0.6053, valid: 0.5952/0.6058 test: 0.5998/0.6100
+Epoch 194, train: 0.5951/0.6053, valid: 0.5920/0.6058 test: 0.5930/0.6100
+Epoch 195, train: 0.5990/0.6053, valid: 0.5800/0.6058 test: 0.5980/0.6100
+Epoch 196, train: 0.5912/0.6053, valid: 0.5900/0.6058 test: 0.5926/0.6100
+Epoch 197, train: 0.5986/0.6053, valid: 0.5844/0.6058 test: 0.5852/0.6100
+Epoch 198, train: 0.5876/0.6053, valid: 0.5866/0.6058 test: 0.5940/0.6100
+Epoch 199, train: 0.5926/0.6053, valid: 0.5802/0.6058 test: 0.5888/0.6100
+Epoch 200, train: 0.6039/0.6053, valid: 0.5958/0.6058 test: 0.5890/0.6100
+Epoch 201, train: 0.5999/0.6053, valid: 0.5852/0.6058 test: 0.5900/0.6100
+Epoch 202, train: 0.5962/0.6053, valid: 0.5888/0.6058 test: 0.5968/0.6100
+Epoch 203, train: 0.5976/0.6053, valid: 0.5820/0.6058 test: 0.5858/0.6100
+Epoch 204, train: 0.5980/0.6053, valid: 0.5956/0.6058 test: 0.5892/0.6100
+Epoch 205, train: 0.5883/0.6053, valid: 0.5840/0.6058 test: 0.5976/0.6100
+Epoch 206, train: 0.6053/0.6053, valid: 0.5752/0.6058 test: 0.5902/0.6100
+Epoch 207, train: 0.5927/0.6053, valid: 0.5894/0.6058 test: 0.5896/0.6100
+Epoch 208, train: 0.5827/0.6053, valid: 0.5820/0.6058 test: 0.5952/0.6100
+Epoch 209, train: 0.5955/0.6053, valid: 0.5852/0.6058 test: 0.5966/0.6100
+Epoch 210, train: 0.5949/0.6053, valid: 0.5862/0.6058 test: 0.5904/0.6100
+Epoch 211, train: 0.5910/0.6053, valid: 0.5908/0.6058 test: 0.5992/0.6100
+Epoch 212, train: 0.6033/0.6053, valid: 0.5744/0.6058 test: 0.6014/0.6100
+Epoch 213, train: 0.5935/0.6053, valid: 0.5850/0.6058 test: 0.5926/0.6100
+Epoch 214, train: 0.6023/0.6053, valid: 0.5920/0.6058 test: 0.5916/0.6100
+Epoch 215, train: 0.5992/0.6053, valid: 0.5872/0.6058 test: 0.5750/0.6100
+Epoch 216, train: 0.5931/0.6053, valid: 0.5946/0.6058 test: 0.5936/0.6100
+Epoch 217, train: 0.5991/0.6053, valid: 0.5852/0.6058 test: 0.5876/0.6100
+Epoch 218, train: 0.6022/0.6053, valid: 0.5916/0.6058 test: 0.6040/0.6100
+Epoch 219, train: 0.5911/0.6053, valid: 0.5946/0.6058 test: 0.5964/0.6100
+Epoch 220, train: 0.5976/0.6053, valid: 0.5946/0.6058 test: 0.5932/0.6100
+Epoch 221, train: 0.5943/0.6053, valid: 0.5784/0.6058 test: 0.5920/0.6100
+Epoch 222, train: 0.5929/0.6053, valid: 0.5818/0.6058 test: 0.5860/0.6100
+Epoch 223, train: 0.6005/0.6053, valid: 0.5928/0.6058 test: 0.5966/0.6100
+Epoch 224, train: 0.6020/0.6053, valid: 0.5826/0.6058 test: 0.5958/0.6100
+Epoch 225, train: 0.5946/0.6053, valid: 0.5964/0.6058 test: 0.5956/0.6100
+Epoch 226, train: 0.6010/0.6053, valid: 0.5950/0.6058 test: 0.5956/0.6100
+Epoch 227, train: 0.5938/0.6053, valid: 0.5876/0.6058 test: 0.5786/0.6100
+Epoch 228, train: 0.6040/0.6053, valid: 0.5940/0.6058 test: 0.5976/0.6100
+Epoch 229, train: 0.5953/0.6053, valid: 0.5838/0.6058 test: 0.5848/0.6100
+Epoch 230, train: 0.6032/0.6053, valid: 0.5880/0.6058 test: 0.5982/0.6100
+Epoch 231, train: 0.6032/0.6053, valid: 0.5838/0.6058 test: 0.5858/0.6100
+Epoch 232, train: 0.6059/0.6059, valid: 0.5902/0.6058 test: 0.5838/0.6100
+Epoch 233, train: 0.6020/0.6059, valid: 0.5880/0.6058 test: 0.5904/0.6100
+Epoch 234, train: 0.5918/0.6059, valid: 0.5910/0.6058 test: 0.5964/0.6100
+Epoch 235, train: 0.5955/0.6059, valid: 0.5692/0.6058 test: 0.5818/0.6100
+Epoch 236, train: 0.5994/0.6059, valid: 0.5882/0.6058 test: 0.5860/0.6100
+Epoch 237, train: 0.6037/0.6059, valid: 0.5838/0.6058 test: 0.5926/0.6100
+Epoch 238, train: 0.5915/0.6059, valid: 0.5908/0.6058 test: 0.5892/0.6100
+Epoch 239, train: 0.6081/0.6081, valid: 0.5838/0.6058 test: 0.5944/0.6100
+Epoch 240, train: 0.5952/0.6081, valid: 0.5944/0.6058 test: 0.5810/0.6100
+Epoch 241, train: 0.6027/0.6081, valid: 0.5936/0.6058 test: 0.5898/0.6100
+Epoch 242, train: 0.5973/0.6081, valid: 0.5952/0.6058 test: 0.5790/0.6100
+Epoch 243, train: 0.5971/0.6081, valid: 0.5828/0.6058 test: 0.5842/0.6100
+Epoch 244, train: 0.5999/0.6081, valid: 0.5904/0.6058 test: 0.5926/0.6100
+Epoch 245, train: 0.5912/0.6081, valid: 0.5818/0.6058 test: 0.5884/0.6100
+Epoch 246, train: 0.5935/0.6081, valid: 0.5812/0.6058 test: 0.5926/0.6100
+Epoch 247, train: 0.6010/0.6081, valid: 0.5872/0.6058 test: 0.5812/0.6100
+Epoch 248, train: 0.6028/0.6081, valid: 0.5910/0.6058 test: 0.5890/0.6100
+Epoch 249, train: 0.5934/0.6081, valid: 0.5818/0.6058 test: 0.5868/0.6100
+Epoch 250, train: 0.6073/0.6081, valid: 0.5918/0.6058 test: 0.5906/0.6100
+Epoch 251, train: 0.6022/0.6081, valid: 0.5890/0.6058 test: 0.5856/0.6100
+Epoch 252, train: 0.6081/0.6081, valid: 0.5746/0.6058 test: 0.5930/0.6100
+Epoch 253, train: 0.5951/0.6081, valid: 0.5884/0.6058 test: 0.5794/0.6100
+Epoch 254, train: 0.6082/0.6082, valid: 0.5946/0.6058 test: 0.5914/0.6100
+Epoch 255, train: 0.6134/0.6134, valid: 0.5890/0.6058 test: 0.5894/0.6100
+Epoch 256, train: 0.6039/0.6134, valid: 0.6052/0.6058 test: 0.5912/0.6100
+Epoch 257, train: 0.6134/0.6134, valid: 0.5958/0.6058 test: 0.5902/0.6100
+Epoch 258, train: 0.6036/0.6134, valid: 0.5972/0.6058 test: 0.5896/0.6100
+Epoch 259, train: 0.6060/0.6134, valid: 0.5886/0.6058 test: 0.5896/0.6100
+Epoch 260, train: 0.6024/0.6134, valid: 0.5800/0.6058 test: 0.5892/0.6100
+Epoch 261, train: 0.6010/0.6134, valid: 0.5744/0.6058 test: 0.5888/0.6100
+Epoch 262, train: 0.6085/0.6134, valid: 0.5850/0.6058 test: 0.5912/0.6100
+Epoch 263, train: 0.5987/0.6134, valid: 0.5834/0.6058 test: 0.6006/0.6100
+Epoch 264, train: 0.6061/0.6134, valid: 0.5942/0.6058 test: 0.5990/0.6100
+Epoch 265, train: 0.6021/0.6134, valid: 0.5846/0.6058 test: 0.5930/0.6100
+Epoch 266, train: 0.5950/0.6134, valid: 0.5824/0.6058 test: 0.6022/0.6100
+Epoch 267, train: 0.6014/0.6134, valid: 0.5938/0.6058 test: 0.6034/0.6100
+Epoch 268, train: 0.6028/0.6134, valid: 0.5968/0.6058 test: 0.6048/0.6100
+Epoch 269, train: 0.6085/0.6134, valid: 0.5854/0.6058 test: 0.5888/0.6100
+Epoch 270, train: 0.6038/0.6134, valid: 0.5968/0.6058 test: 0.5826/0.6100
+Epoch 271, train: 0.6080/0.6134, valid: 0.5946/0.6058 test: 0.5930/0.6100
+Epoch 272, train: 0.5987/0.6134, valid: 0.5910/0.6058 test: 0.5990/0.6100
+Epoch 273, train: 0.6028/0.6134, valid: 0.5888/0.6058 test: 0.5946/0.6100
+Epoch 274, train: 0.5988/0.6134, valid: 0.5816/0.6058 test: 0.5842/0.6100
+Epoch 275, train: 0.6014/0.6134, valid: 0.5852/0.6058 test: 0.5926/0.6100
+Epoch 276, train: 0.6023/0.6134, valid: 0.5926/0.6058 test: 0.5892/0.6100
+Epoch 277, train: 0.6006/0.6134, valid: 0.5912/0.6058 test: 0.5970/0.6100
+Epoch 278, train: 0.6091/0.6134, valid: 0.5818/0.6058 test: 0.5848/0.6100
+Epoch 279, train: 0.5970/0.6134, valid: 0.5904/0.6058 test: 0.5856/0.6100
+Epoch 280, train: 0.5992/0.6134, valid: 0.5776/0.6058 test: 0.5976/0.6100
+Epoch 281, train: 0.5987/0.6134, valid: 0.5896/0.6058 test: 0.6000/0.6100
+Epoch 282, train: 0.6003/0.6134, valid: 0.5904/0.6058 test: 0.5984/0.6100
+Epoch 283, train: 0.6048/0.6134, valid: 0.5826/0.6058 test: 0.5832/0.6100
+Epoch 284, train: 0.6069/0.6134, valid: 0.5826/0.6058 test: 0.5934/0.6100
+Epoch 285, train: 0.6015/0.6134, valid: 0.5832/0.6058 test: 0.5984/0.6100
+Epoch 286, train: 0.6040/0.6134, valid: 0.5860/0.6058 test: 0.5800/0.6100
+Epoch 287, train: 0.6068/0.6134, valid: 0.5962/0.6058 test: 0.5938/0.6100
+Epoch 288, train: 0.6013/0.6134, valid: 0.5840/0.6058 test: 0.6012/0.6100
+Epoch 289, train: 0.6054/0.6134, valid: 0.5912/0.6058 test: 0.5886/0.6100
+Epoch 290, train: 0.6027/0.6134, valid: 0.5950/0.6058 test: 0.5928/0.6100
+Epoch 291, train: 0.6015/0.6134, valid: 0.5802/0.6058 test: 0.6032/0.6100
+Epoch 292, train: 0.6043/0.6134, valid: 0.5840/0.6058 test: 0.5962/0.6100
+Epoch 293, train: 0.6077/0.6134, valid: 0.5918/0.6058 test: 0.5964/0.6100
+Epoch 294, train: 0.6077/0.6134, valid: 0.5982/0.6058 test: 0.5930/0.6100
+Epoch 295, train: 0.5959/0.6134, valid: 0.5852/0.6058 test: 0.5998/0.6100
+Epoch 296, train: 0.6023/0.6134, valid: 0.5936/0.6058 test: 0.5996/0.6100
+Epoch 297, train: 0.6012/0.6134, valid: 0.5766/0.6058 test: 0.5970/0.6100
+Epoch 298, train: 0.6008/0.6134, valid: 0.5982/0.6058 test: 0.6048/0.6100
+Epoch 299, train: 0.5991/0.6134, valid: 0.5800/0.6058 test: 0.5956/0.6100
+Epoch 300, train: 0.6002/0.6134, valid: 0.5842/0.6058 test: 0.5866/0.6100
+Epoch 301, train: 0.6088/0.6134, valid: 0.5840/0.6058 test: 0.5862/0.6100
+Epoch 302, train: 0.6040/0.6134, valid: 0.5898/0.6058 test: 0.5892/0.6100
+Epoch 303, train: 0.5967/0.6134, valid: 0.5872/0.6058 test: 0.6006/0.6100
+Epoch 304, train: 0.6075/0.6134, valid: 0.5872/0.6058 test: 0.5956/0.6100
+Epoch 305, train: 0.6064/0.6134, valid: 0.5862/0.6058 test: 0.5850/0.6100
+Epoch 306, train: 0.6063/0.6134, valid: 0.5876/0.6058 test: 0.6068/0.6100
+Epoch 307, train: 0.6022/0.6134, valid: 0.5928/0.6058 test: 0.5926/0.6100
+Epoch 308, train: 0.6044/0.6134, valid: 0.5846/0.6058 test: 0.5928/0.6100
+Epoch 309, train: 0.6044/0.6134, valid: 0.5910/0.6058 test: 0.5954/0.6100
+Epoch 310, train: 0.6014/0.6134, valid: 0.5838/0.6058 test: 0.5962/0.6100
+Epoch 311, train: 0.6099/0.6134, valid: 0.5894/0.6058 test: 0.5914/0.6100
+Epoch 312, train: 0.5986/0.6134, valid: 0.5730/0.6058 test: 0.6052/0.6100
+Epoch 313, train: 0.5981/0.6134, valid: 0.5960/0.6058 test: 0.5870/0.6100
+Epoch 314, train: 0.6095/0.6134, valid: 0.5916/0.6058 test: 0.5962/0.6100
+Epoch 315, train: 0.5999/0.6134, valid: 0.5840/0.6058 test: 0.6010/0.6100
+Epoch 316, train: 0.6010/0.6134, valid: 0.5910/0.6058 test: 0.5980/0.6100
+Epoch 317, train: 0.6006/0.6134, valid: 0.5906/0.6058 test: 0.5964/0.6100
+Epoch 318, train: 0.5945/0.6134, valid: 0.5914/0.6058 test: 0.5970/0.6100
+Epoch 319, train: 0.6036/0.6134, valid: 0.6020/0.6058 test: 0.5956/0.6100
+Epoch 320, train: 0.6012/0.6134, valid: 0.5872/0.6058 test: 0.5918/0.6100
+Epoch 321, train: 0.6034/0.6134, valid: 0.5852/0.6058 test: 0.6100/0.6100
+Epoch 322, train: 0.6002/0.6134, valid: 0.5962/0.6058 test: 0.5900/0.6100
+Epoch 323, train: 0.6007/0.6134, valid: 0.5794/0.6058 test: 0.6042/0.6100
+Epoch 324, train: 0.6047/0.6134, valid: 0.5838/0.6058 test: 0.5862/0.6100
+Epoch 325, train: 0.6024/0.6134, valid: 0.5886/0.6058 test: 0.5920/0.6100
+Epoch 326, train: 0.6036/0.6134, valid: 0.5920/0.6058 test: 0.5968/0.6100
+Epoch 327, train: 0.6043/0.6134, valid: 0.5918/0.6058 test: 0.5980/0.6100
+Epoch 328, train: 0.6072/0.6134, valid: 0.5916/0.6058 test: 0.5970/0.6100
+Epoch 329, train: 0.6108/0.6134, valid: 0.5846/0.6058 test: 0.6018/0.6100
+Epoch 330, train: 0.6038/0.6134, valid: 0.5872/0.6058 test: 0.5732/0.6100
+Epoch 331, train: 0.6007/0.6134, valid: 0.5968/0.6058 test: 0.5840/0.6100
+Epoch 332, train: 0.6001/0.6134, valid: 0.5788/0.6058 test: 0.5940/0.6100
+Epoch 333, train: 0.6071/0.6134, valid: 0.5900/0.6058 test: 0.5984/0.6100
+Epoch 334, train: 0.6074/0.6134, valid: 0.5862/0.6058 test: 0.5924/0.6100
+Epoch 335, train: 0.6022/0.6134, valid: 0.5870/0.6058 test: 0.5956/0.6100
+Epoch 336, train: 0.5981/0.6134, valid: 0.5880/0.6058 test: 0.5990/0.6100
+Epoch 337, train: 0.6116/0.6134, valid: 0.5788/0.6058 test: 0.5780/0.6100
+Epoch 338, train: 0.6078/0.6134, valid: 0.5882/0.6058 test: 0.5948/0.6100
+Epoch 339, train: 0.6065/0.6134, valid: 0.5876/0.6058 test: 0.6038/0.6100
+Epoch 340, train: 0.6013/0.6134, valid: 0.5992/0.6058 test: 0.5920/0.6100
+Epoch 341, train: 0.6097/0.6134, valid: 0.5920/0.6058 test: 0.6078/0.6100
+Epoch 342, train: 0.6115/0.6134, valid: 0.5946/0.6058 test: 0.5920/0.6100
+Epoch 343, train: 0.6051/0.6134, valid: 0.5826/0.6058 test: 0.5902/0.6100
+Epoch 344, train: 0.6008/0.6134, valid: 0.5892/0.6058 test: 0.6102/0.6102
+Epoch 345, train: 0.6002/0.6134, valid: 0.5902/0.6058 test: 0.5956/0.6102
+Epoch 346, train: 0.6100/0.6134, valid: 0.5808/0.6058 test: 0.5936/0.6102
+Epoch 347, train: 0.6012/0.6134, valid: 0.5922/0.6058 test: 0.5940/0.6102
+Epoch 348, train: 0.6102/0.6134, valid: 0.5906/0.6058 test: 0.5852/0.6102
+Epoch 349, train: 0.5982/0.6134, valid: 0.5834/0.6058 test: 0.5988/0.6102
+Epoch 350, train: 0.6114/0.6134, valid: 0.5914/0.6058 test: 0.5990/0.6102
+Epoch 351, train: 0.6072/0.6134, valid: 0.5956/0.6058 test: 0.6000/0.6102
+Epoch 352, train: 0.5988/0.6134, valid: 0.5828/0.6058 test: 0.5894/0.6102
+Epoch 353, train: 0.6000/0.6134, valid: 0.5906/0.6058 test: 0.5980/0.6102
+Epoch 354, train: 0.5956/0.6134, valid: 0.5848/0.6058 test: 0.5822/0.6102
+Epoch 355, train: 0.6014/0.6134, valid: 0.5888/0.6058 test: 0.5900/0.6102
+Epoch 356, train: 0.6106/0.6134, valid: 0.5834/0.6058 test: 0.5846/0.6102
+Epoch 357, train: 0.5982/0.6134, valid: 0.5936/0.6058 test: 0.5956/0.6102
+Epoch 358, train: 0.6032/0.6134, valid: 0.5900/0.6058 test: 0.5978/0.6102
+Epoch 359, train: 0.5992/0.6134, valid: 0.5920/0.6058 test: 0.5850/0.6102
+Epoch 360, train: 0.6063/0.6134, valid: 0.5802/0.6058 test: 0.5876/0.6102
+Epoch 361, train: 0.5976/0.6134, valid: 0.5860/0.6058 test: 0.5984/0.6102
+Epoch 362, train: 0.6183/0.6183, valid: 0.5900/0.6058 test: 0.5858/0.6102
+Epoch 363, train: 0.6044/0.6183, valid: 0.6004/0.6058 test: 0.5866/0.6102
+Epoch 364, train: 0.6024/0.6183, valid: 0.6032/0.6058 test: 0.5990/0.6102
+Epoch 365, train: 0.5996/0.6183, valid: 0.5982/0.6058 test: 0.5916/0.6102
+Epoch 366, train: 0.6097/0.6183, valid: 0.5860/0.6058 test: 0.5892/0.6102
+Epoch 367, train: 0.6087/0.6183, valid: 0.5970/0.6058 test: 0.5928/0.6102
+Epoch 368, train: 0.6158/0.6183, valid: 0.5994/0.6058 test: 0.5908/0.6102
+Epoch 369, train: 0.6042/0.6183, valid: 0.5880/0.6058 test: 0.6002/0.6102
+Epoch 370, train: 0.6011/0.6183, valid: 0.5996/0.6058 test: 0.5936/0.6102
+Epoch 371, train: 0.6036/0.6183, valid: 0.5914/0.6058 test: 0.5996/0.6102
+Epoch 372, train: 0.6082/0.6183, valid: 0.5790/0.6058 test: 0.5862/0.6102
+Epoch 373, train: 0.6067/0.6183, valid: 0.5954/0.6058 test: 0.5996/0.6102
+Epoch 374, train: 0.6017/0.6183, valid: 0.5878/0.6058 test: 0.6014/0.6102
+Epoch 375, train: 0.6008/0.6183, valid: 0.5788/0.6058 test: 0.6058/0.6102
+Epoch 376, train: 0.6051/0.6183, valid: 0.5884/0.6058 test: 0.5916/0.6102
+Epoch 377, train: 0.6070/0.6183, valid: 0.5886/0.6058 test: 0.5910/0.6102
+Epoch 378, train: 0.5971/0.6183, valid: 0.5938/0.6058 test: 0.5880/0.6102
+Epoch 379, train: 0.6024/0.6183, valid: 0.5958/0.6058 test: 0.5904/0.6102
+Epoch 380, train: 0.6083/0.6183, valid: 0.5824/0.6058 test: 0.5940/0.6102
+Epoch 381, train: 0.6108/0.6183, valid: 0.5850/0.6058 test: 0.5900/0.6102
+Epoch 382, train: 0.6051/0.6183, valid: 0.5810/0.6058 test: 0.5914/0.6102
+Epoch 383, train: 0.6007/0.6183, valid: 0.5998/0.6058 test: 0.5836/0.6102
+Epoch 384, train: 0.6101/0.6183, valid: 0.5808/0.6058 test: 0.5890/0.6102
+Epoch 385, train: 0.6060/0.6183, valid: 0.5910/0.6058 test: 0.5840/0.6102
+Epoch 386, train: 0.6068/0.6183, valid: 0.5802/0.6058 test: 0.5814/0.6102
+Epoch 387, train: 0.6070/0.6183, valid: 0.5854/0.6058 test: 0.5996/0.6102
+Epoch 388, train: 0.6108/0.6183, valid: 0.5834/0.6058 test: 0.6036/0.6102
+Epoch 389, train: 0.6105/0.6183, valid: 0.5764/0.6058 test: 0.5974/0.6102
+Epoch 390, train: 0.6013/0.6183, valid: 0.5894/0.6058 test: 0.5848/0.6102
+Epoch 391, train: 0.6121/0.6183, valid: 0.5840/0.6058 test: 0.5926/0.6102
+Epoch 392, train: 0.6125/0.6183, valid: 0.5806/0.6058 test: 0.5782/0.6102
+Epoch 393, train: 0.6100/0.6183, valid: 0.5926/0.6058 test: 0.5856/0.6102
+Epoch 394, train: 0.6017/0.6183, valid: 0.5798/0.6058 test: 0.5956/0.6102
+Epoch 395, train: 0.6118/0.6183, valid: 0.5790/0.6058 test: 0.5844/0.6102
+Epoch 396, train: 0.6087/0.6183, valid: 0.5896/0.6058 test: 0.5920/0.6102
+Epoch 397, train: 0.6040/0.6183, valid: 0.5818/0.6058 test: 0.5910/0.6102
+Epoch 398, train: 0.6058/0.6183, valid: 0.5782/0.6058 test: 0.5874/0.6102
+Epoch 399, train: 0.6013/0.6183, valid: 0.5932/0.6058 test: 0.5962/0.6102
+Epoch 400, train: 0.6146/0.6183, valid: 0.5972/0.6058 test: 0.5856/0.6102
+Epoch 401, train: 0.6148/0.6183, valid: 0.5864/0.6058 test: 0.5970/0.6102
+Epoch 402, train: 0.6076/0.6183, valid: 0.5936/0.6058 test: 0.6068/0.6102
+Epoch 403, train: 0.6017/0.6183, valid: 0.5814/0.6058 test: 0.5896/0.6102
+Epoch 404, train: 0.6101/0.6183, valid: 0.5864/0.6058 test: 0.5930/0.6102
+Epoch 405, train: 0.6101/0.6183, valid: 0.5874/0.6058 test: 0.5914/0.6102
+Epoch 406, train: 0.6030/0.6183, valid: 0.5950/0.6058 test: 0.5920/0.6102
+Epoch 407, train: 0.6064/0.6183, valid: 0.5858/0.6058 test: 0.5956/0.6102
+Epoch 408, train: 0.6114/0.6183, valid: 0.5982/0.6058 test: 0.5962/0.6102
+Epoch 409, train: 0.5947/0.6183, valid: 0.5840/0.6058 test: 0.5932/0.6102
+Epoch 410, train: 0.6110/0.6183, valid: 0.5980/0.6058 test: 0.5926/0.6102
+Epoch 411, train: 0.6082/0.6183, valid: 0.5800/0.6058 test: 0.5902/0.6102
+Epoch 412, train: 0.6172/0.6183, valid: 0.5842/0.6058 test: 0.5942/0.6102
+Epoch 413, train: 0.6101/0.6183, valid: 0.5904/0.6058 test: 0.5934/0.6102
+Epoch 414, train: 0.6039/0.6183, valid: 0.5918/0.6058 test: 0.5898/0.6102
+Epoch 415, train: 0.5992/0.6183, valid: 0.6002/0.6058 test: 0.5986/0.6102
+Epoch 416, train: 0.5953/0.6183, valid: 0.5992/0.6058 test: 0.5822/0.6102
+Epoch 417, train: 0.6044/0.6183, valid: 0.5932/0.6058 test: 0.5864/0.6102
+Epoch 418, train: 0.6092/0.6183, valid: 0.5890/0.6058 test: 0.6020/0.6102
+Epoch 419, train: 0.6074/0.6183, valid: 0.5910/0.6058 test: 0.5930/0.6102
+Epoch 420, train: 0.5971/0.6183, valid: 0.5958/0.6058 test: 0.5972/0.6102
+Epoch 421, train: 0.6112/0.6183, valid: 0.5920/0.6058 test: 0.6068/0.6102
+Epoch 422, train: 0.6070/0.6183, valid: 0.5922/0.6058 test: 0.5900/0.6102
+Epoch 423, train: 0.6070/0.6183, valid: 0.5836/0.6058 test: 0.5990/0.6102
+Epoch 424, train: 0.6089/0.6183, valid: 0.5856/0.6058 test: 0.6028/0.6102
+Epoch 425, train: 0.6052/0.6183, valid: 0.5912/0.6058 test: 0.6014/0.6102
+Epoch 426, train: 0.5997/0.6183, valid: 0.5882/0.6058 test: 0.5974/0.6102
+Epoch 427, train: 0.6070/0.6183, valid: 0.5866/0.6058 test: 0.5922/0.6102
+Epoch 428, train: 0.6145/0.6183, valid: 0.5812/0.6058 test: 0.5906/0.6102
+Epoch 429, train: 0.6103/0.6183, valid: 0.5960/0.6058 test: 0.6038/0.6102
+Epoch 430, train: 0.6036/0.6183, valid: 0.5766/0.6058 test: 0.5960/0.6102
+Epoch 431, train: 0.6151/0.6183, valid: 0.5864/0.6058 test: 0.5994/0.6102
+Epoch 432, train: 0.6077/0.6183, valid: 0.5788/0.6058 test: 0.6036/0.6102
+Epoch 433, train: 0.6074/0.6183, valid: 0.5946/0.6058 test: 0.5960/0.6102
+Epoch 434, train: 0.6152/0.6183, valid: 0.5918/0.6058 test: 0.5994/0.6102
+Epoch 435, train: 0.6022/0.6183, valid: 0.5800/0.6058 test: 0.5822/0.6102
+Epoch 436, train: 0.6009/0.6183, valid: 0.5838/0.6058 test: 0.5994/0.6102
+Epoch 437, train: 0.6118/0.6183, valid: 0.5830/0.6058 test: 0.5944/0.6102
+Epoch 438, train: 0.6134/0.6183, valid: 0.5916/0.6058 test: 0.5948/0.6102
+Epoch 439, train: 0.6116/0.6183, valid: 0.6048/0.6058 test: 0.5906/0.6102
+Epoch 440, train: 0.6176/0.6183, valid: 0.5876/0.6058 test: 0.5884/0.6102
+Epoch 441, train: 0.6078/0.6183, valid: 0.5866/0.6058 test: 0.5966/0.6102
+Epoch 442, train: 0.6116/0.6183, valid: 0.5826/0.6058 test: 0.5912/0.6102
+Epoch 443, train: 0.6195/0.6195, valid: 0.5728/0.6058 test: 0.5872/0.6102
+Epoch 444, train: 0.6117/0.6195, valid: 0.5972/0.6058 test: 0.5844/0.6102
+Epoch 445, train: 0.6127/0.6195, valid: 0.5928/0.6058 test: 0.5952/0.6102
+Epoch 446, train: 0.6001/0.6195, valid: 0.5858/0.6058 test: 0.5876/0.6102
+Epoch 447, train: 0.6167/0.6195, valid: 0.5826/0.6058 test: 0.5820/0.6102
+Epoch 448, train: 0.6076/0.6195, valid: 0.5830/0.6058 test: 0.5926/0.6102
+Epoch 449, train: 0.6023/0.6195, valid: 0.5922/0.6058 test: 0.6036/0.6102
+Epoch 450, train: 0.6182/0.6195, valid: 0.5890/0.6058 test: 0.5918/0.6102
+Epoch 451, train: 0.6135/0.6195, valid: 0.5874/0.6058 test: 0.5882/0.6102
+Epoch 452, train: 0.6050/0.6195, valid: 0.5838/0.6058 test: 0.5904/0.6102
+Epoch 453, train: 0.6108/0.6195, valid: 0.5708/0.6058 test: 0.5870/0.6102
+Epoch 454, train: 0.6004/0.6195, valid: 0.5892/0.6058 test: 0.5908/0.6102
+Epoch 455, train: 0.6059/0.6195, valid: 0.5922/0.6058 test: 0.5890/0.6102
+Epoch 456, train: 0.6085/0.6195, valid: 0.5962/0.6058 test: 0.5874/0.6102
+Epoch 457, train: 0.6148/0.6195, valid: 0.5860/0.6058 test: 0.5880/0.6102
+Epoch 458, train: 0.6118/0.6195, valid: 0.5878/0.6058 test: 0.5910/0.6102
+Epoch 459, train: 0.6092/0.6195, valid: 0.5908/0.6058 test: 0.5808/0.6102
+Epoch 460, train: 0.6048/0.6195, valid: 0.5868/0.6058 test: 0.5912/0.6102
+Epoch 461, train: 0.6180/0.6195, valid: 0.5944/0.6058 test: 0.5960/0.6102
+Epoch 462, train: 0.6127/0.6195, valid: 0.5870/0.6058 test: 0.5986/0.6102
+Epoch 463, train: 0.6097/0.6195, valid: 0.5926/0.6058 test: 0.6022/0.6102
+Epoch 464, train: 0.6053/0.6195, valid: 0.6028/0.6058 test: 0.5880/0.6102
+Epoch 465, train: 0.6080/0.6195, valid: 0.5854/0.6058 test: 0.5852/0.6102
+Epoch 466, train: 0.6137/0.6195, valid: 0.5914/0.6058 test: 0.5974/0.6102
+Epoch 467, train: 0.6152/0.6195, valid: 0.5936/0.6058 test: 0.5898/0.6102
+Epoch 468, train: 0.6060/0.6195, valid: 0.5960/0.6058 test: 0.5912/0.6102
+Epoch 469, train: 0.6084/0.6195, valid: 0.5772/0.6058 test: 0.5916/0.6102
+Epoch 470, train: 0.5970/0.6195, valid: 0.5842/0.6058 test: 0.5942/0.6102
+Epoch 471, train: 0.6101/0.6195, valid: 0.5892/0.6058 test: 0.5912/0.6102
+Epoch 472, train: 0.6032/0.6195, valid: 0.5850/0.6058 test: 0.5932/0.6102
+Epoch 473, train: 0.6154/0.6195, valid: 0.5834/0.6058 test: 0.5920/0.6102
+Epoch 474, train: 0.6111/0.6195, valid: 0.5988/0.6058 test: 0.5882/0.6102
+Epoch 475, train: 0.6128/0.6195, valid: 0.5888/0.6058 test: 0.5952/0.6102
+Epoch 476, train: 0.6085/0.6195, valid: 0.5806/0.6058 test: 0.6026/0.6102
+Epoch 477, train: 0.6131/0.6195, valid: 0.5898/0.6058 test: 0.6008/0.6102
+Epoch 478, train: 0.6101/0.6195, valid: 0.5822/0.6058 test: 0.5866/0.6102
+Epoch 479, train: 0.6044/0.6195, valid: 0.5892/0.6058 test: 0.5940/0.6102
+Epoch 480, train: 0.6141/0.6195, valid: 0.5858/0.6058 test: 0.5888/0.6102
+Epoch 481, train: 0.6142/0.6195, valid: 0.5838/0.6058 test: 0.5804/0.6102
+Epoch 482, train: 0.6176/0.6195, valid: 0.5786/0.6058 test: 0.6044/0.6102
+Epoch 483, train: 0.6131/0.6195, valid: 0.5878/0.6058 test: 0.5924/0.6102
+Epoch 484, train: 0.6096/0.6195, valid: 0.5872/0.6058 test: 0.5854/0.6102
+Epoch 485, train: 0.6146/0.6195, valid: 0.5866/0.6058 test: 0.6008/0.6102
+Epoch 486, train: 0.6145/0.6195, valid: 0.5912/0.6058 test: 0.5944/0.6102
+Epoch 487, train: 0.6081/0.6195, valid: 0.5890/0.6058 test: 0.5828/0.6102
+Epoch 488, train: 0.6093/0.6195, valid: 0.5886/0.6058 test: 0.5914/0.6102
+Epoch 489, train: 0.6083/0.6195, valid: 0.5878/0.6058 test: 0.5848/0.6102
+Epoch 490, train: 0.6167/0.6195, valid: 0.5844/0.6058 test: 0.5958/0.6102
+Epoch 491, train: 0.6082/0.6195, valid: 0.5836/0.6058 test: 0.5888/0.6102
+Epoch 492, train: 0.6096/0.6195, valid: 0.5754/0.6058 test: 0.5898/0.6102
+Epoch 493, train: 0.5986/0.6195, valid: 0.5862/0.6058 test: 0.5948/0.6102
+Epoch 494, train: 0.6135/0.6195, valid: 0.5902/0.6058 test: 0.5926/0.6102
+Epoch 495, train: 0.6105/0.6195, valid: 0.5888/0.6058 test: 0.5970/0.6102
+Epoch 496, train: 0.6033/0.6195, valid: 0.5842/0.6058 test: 0.5928/0.6102
+Epoch 497, train: 0.6196/0.6196, valid: 0.5800/0.6058 test: 0.5892/0.6102
+Epoch 498, train: 0.6096/0.6196, valid: 0.5840/0.6058 test: 0.5904/0.6102
+Epoch 499, train: 0.6129/0.6196, valid: 0.5826/0.6058 test: 0.5856/0.6102

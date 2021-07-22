@@ -5,7 +5,7 @@ import logging
 import numpy as np
 import tensorflow as tf
 from scipy.stats import entropy
-from scipy.special import softmax
+#from scipy.special import softmax
 from easydict import EasyDict as edict
 
 from utils.hparams import HParams

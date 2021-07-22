@@ -3,7 +3,7 @@ import logging
 import numpy as np
 import tensorflow as tf
 from collections import namedtuple, defaultdict
-from scipy.special import softmax
+#from scipy.special import softmax
 from pprint import pformat
 import random
 

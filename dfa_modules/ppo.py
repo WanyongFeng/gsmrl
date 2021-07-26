@@ -487,9 +487,9 @@ class PPOPolicy(object):
             done = np.zeros([s.shape[0]], dtype=np.bool)
             while not np.all(done):
                 f = self.env.peek(s, m)
-                a, p = self.act(s, m, f, hard=hard)
+                a, p, probas = self.act(s, m, f, hard=hard)
                 a[done] = -1
-                s, m, r, done = self.env.step(a, p)
+                s, m, r, done = self.env.step(a, p, probas)
                 episode_reward += r
                 num_acquisition += ~done
                 transition += m

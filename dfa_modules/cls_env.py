@@ -110,17 +110,7 @@ class Env(object):
 										break
 						if not count > self.terminal_act + 10:
 								action[idx] = act
-				logger.info(f'action:  {action}')		  
-				# action = []
-				# for i, p in enumerate(probas):
-				#		  act = np.random.choice(self.terminal_act + 1, p=p)
-				#		  while(act > -1 and act < self.terminal_act and self.x[i][act] == 0):
-				#				  logger.info(f'act:  {act}')
-				#				  logger.info(f'self.x:  {self.x}')
-				#				  act = np.random.choice(self.terminal_act + 1, p=p)
-				#		  action.append(act)
-				# action = np.array(action)
-				# logger.info(f'action:  {action}')				 
+				logger.info(f'action:  {action}')		  			 
 				empty = action == -1
 				terminal = action == self.terminal_act
 				normal = np.logical_and(~empty, ~terminal)
@@ -138,7 +128,6 @@ class Env(object):
 						reward[terminal] = self._cls_reward(x, m, y, p)
 				if np.any(normal):
 						x = self.x[normal]
-						# logger.info(f'x:		{x}')
 						y = self.y[normal]
 						a = action[normal]
 						m = self.m[normal]
@@ -147,29 +136,9 @@ class Env(object):
 						m[np.arange(len(a)), a] = 1.
 						self.m[normal] = m.copy() # explicitly update m
 						acquisition_cost = self.cost[a]
-
-						# sam = self.model.run(
-						#		  [self.model.sam],
-						#				  feed_dict={self.model.x: x,
-						#				  self.model.b: old_m,
-						#				  self.model.m: np.ones_like(old_m)})	 
-						# diff = []
-						# for i, vals in enumerate(old_m):
-						#		  for j, val in enumerate(vals):
-						#				  if not m[i][j] == val:
-						#						  diff.append(j)
-						# # logger.info(f'diff:  {diff}')
-						# diff = np.array(diff)
-
-						# for i, value in enumerate(x):
-						#		  if value[diff[i]] == 0.0:
-						#				  idx = random.randint(0, 9)
-						#				  value[diff[i]] = abs(sam[0][i][idx][diff[i]])
-						# # logger.info(f'x_changed:  {x}')
 						info_gain = self._info_gain(x, old_m, m, y)
 						reward[normal] = info_gain - acquisition_cost
-						# self.x[normal] = x
-						# logger.info(f'self.x_changed:  {self.x}')
+						
 				return self.x * self.m, self.m.copy(), reward, done
 
 		def peek(self, state, mask):

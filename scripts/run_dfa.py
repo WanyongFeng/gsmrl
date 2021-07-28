@@ -61,7 +61,7 @@ if args.mode == 'resume':
     agent.train()
 if args.mode == 'train':
     agent.train()
-train_dict = agent.evaluate(hard=args.hard, max_batches=30)
+train_dict = agent.evaluate(hard=args.hard, max_batches=2)
 
 # test
 with tf.device(f"/gpu:{args.env_device}"):
@@ -70,7 +70,10 @@ with tf.device(f"/gpu:{args.env_device}"):
 with tf.device(f"/gpu:{args.agent_device}"):
     agent = PPOPolicy(params, env, 'test')
 
-test_dict = agent.evaluate(hard=args.hard, max_batches=10)
+test_dict = agent.evaluate(hard=args.hard, max_batches=2)
+
+logging.info(train_dict)
+logging.info(test_dict)
 
 # save
 os.makedirs(f'{params.exp_dir}/evaluate', exist_ok=True)

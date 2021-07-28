@@ -72,9 +72,9 @@ with tf.device(f"/gpu:{args.agent_device}"):
 
 test_dict = agent.evaluate(hard=args.hard, max_batches=2)
 
-print("train_acflow:" + str(np.mean(train_dict['metrics']['acc_acflow'])))
+print("train_acflow: " + str(np.mean(train_dict['metrics']['acc_acflow'])))
 print("train_policy: " + str(np.mean(train_dict['metrics']['acc_policy'])))
-print("test_acflow:" + str(np.mean(test_dict['metrics']['acc_acflow'])))
+print("test_acflow: " + str(np.mean(test_dict['metrics']['acc_acflow'])))
 print("test_policy: " + str(np.mean(test_dict['metrics']['acc_policy'])))
 
 # save

@@ -18,7 +18,7 @@
     "ratio_clip_range": 0.2,
     "ratio_clip_decay": 0,
     "pretrain_iters": 0,
-    "train_iters": 1000,
+    "train_iters": 50,
     "batch_size": 500,
     "epochs": 5,
     "finetune_env": 0,

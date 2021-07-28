@@ -465,7 +465,7 @@ class PPOPolicy(object):
             'reward': reward_history,
             'reward_smooth10': reward_averaged,
         }
-        plot_dict(f'{self.hps.exp_dir}/learning_curve.png', data_dict, xlabel='episode')
+        #plot_dict(f'{self.hps.exp_dir}/learning_curve.png', data_dict, xlabel='episode')
 
     def evaluate(self, load=True, hard=False, max_batches=10):
         if load: self.load('best')
